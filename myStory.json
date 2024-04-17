@@ -1,0 +1,132 @@
+{
+    "Title": "Void Signal",
+    "Credits": "Story by Lingtian He.",
+    "InitialLocation": "Airlock",
+    "Locations": {
+        "Airlock": {
+            "Body": "You enter through the emergency airlock. The lights flicker ominously. The silence is deafening, broken only by the sound of your own breath.",
+            "Choices": [
+                {
+                    "Text": "Proceed to the Engine Room",
+                    "Target": "EngineRoom"
+                }
+            ]
+        },
+        "EngineRoom": {
+            "Body": "The engine room is dark, with the power core's standby lights providing minimal illumination. You'll need to initiate the emergency startup sequence.",
+            "Choices": [
+                {
+                    "Text": "Attempt to restore power",
+                    "Target": "TryRestorePower"
+                },
+                {
+                    "Text": "Search for an access code",
+                    "Target": "EngineRoomStorage"
+                }
+            ]
+        },
+        "EngineRoomStorage": {
+            "Body": "You find a locker that's slightly ajar. Inside, there's a note with an access code.",
+            "Choices": [
+                {
+                    "Text": "Take the access code and return",
+                    "Target": "EngineRoom"
+                }
+            ],
+            "Items": [
+                {
+                    "Name": "Access Code",
+                    "Location": "On a note inside the locker"
+                }
+            ]
+        },
+        "TryRestorePower": {
+            "Body": "You approach the console to restore power, but it requires an access code.",
+            "Choices": [
+                {
+                    "Text": "Enter Access Code",
+                    "Target": "PowerRestored",
+                    "RequiresItem": "Access Code"
+                },
+                {
+                    "Text": "Return to Engine Room",
+                    "Target": "EngineRoom"
+                }
+            ]
+        },
+        "PowerRestored": {
+            "Body": "With the access code entered, the engines hum to life, restoring power to the ship. Lights flicker on, and systems begin to reboot.",
+            "Choices": [
+                {
+                    "Text": "Head to Crew Quarters",
+                    "Target": "CrewQuarters"
+                }
+            ]
+        },
+        "CrewQuarters": {
+            "Body": "The crew's quarters are eerily silent, personal items strewn about as if left in a hurry. A digital log flickers to life as you approach.",
+            "Choices": [
+                {
+                    "Text": "Examine the log for clues",
+                    "Target": "Bridge"
+                }
+            ]
+        },
+        "Bridge": {
+            "Body": "The bridge's panoramic windows offer a view of the void outside, stars twinkling indifferently to the drama within. The captain's console has one last entry, awaiting playback.",
+            "Choices": [
+                {
+                    "Text": "Play the captain's final log",
+                    "Target": "DecisionPoint"
+                }
+            ]
+        },
+        "DecisionPoint": {
+            "Body": "The log reveals a tale of discovery turned nightmare. The artifact, ancient and alien, was not merely a relic but a beacon... and something had heard its call. Now, you must decide the next step.",
+            "Choices": [
+                {
+                    "Text": "Attempt to disable the artifact and call for help",
+                    "Target": "DisableArtifact"
+                },
+                {
+                    "Text": "Use the artifact to send a warning to other ships",
+                    "Target": "SendWarning"
+                },
+                {
+                    "Text": "Leave the ship and set it to self-destruct",
+                    "Target": "SelfDestruct"
+                }
+            ]
+        },
+        "DisableArtifact": {
+            "Body": "After navigating back to the artifact chamber, you manage to disable the artifact. You send a distress signal to the nearest station. Rescue arrives days later, closing this dark chapter.",
+            "Choices": [
+                {
+                    "Text": "View Credits",
+                    "Target": "Credits"
+                }
+            ]
+        },
+        "SendWarning": {
+            "Body": "Using the ship's communication array, you broadcast a warning across the star systems, telling of the artifact's dangers. Your message will save countless lives.",
+            "Choices": [
+                {
+                    "Text": "View Credits",
+                    "Target": "Credits"
+                }
+            ]
+        },
+        "SelfDestruct": {
+            "Body": "Knowing the risk is too great, you set the ship's engines to overload, escaping in the last escape pod as the Cerberus explodes behind you, ensuring nothing can use the artifact again.",
+            "Choices": [
+                {
+                    "Text": "View Credits",
+                    "Target": "Credits"
+                }
+            ]
+        },
+        "Credits": {
+            "Body": "Thank you for playing Void Signal, this is just a simple attempt, and I'll update it later as I refine the script and details of the story. Story by Lingtian He."
+        }
+    }
+}
